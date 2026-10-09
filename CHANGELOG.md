@@ -4,6 +4,7 @@
 
 - Completed `my_dpo_loss` in `notebooks/00_dpo_loss_from_scratch.py` using the DPO `logsigmoid` objective and batch-mean reduction.
 - Started the Lab 22 submission run; GPU-generated artifacts and measured reflection results will be added after the Colab T4 pipeline completes.
+- Added a T4-safe Colab fallback that sets `MAX_LEN=512` to reduce CUDA out-of-memory risk during the rerun.
 
 ## 0.2.0 — 2026-10-07
 
