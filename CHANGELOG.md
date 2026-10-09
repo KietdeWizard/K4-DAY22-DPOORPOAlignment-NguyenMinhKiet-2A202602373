@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased - 2026-10-09
+
+- Completed `my_dpo_loss` in `notebooks/00_dpo_loss_from_scratch.py` using the DPO `logsigmoid` objective and batch-mean reduction.
+- Started the Lab 22 submission run; GPU-generated artifacts and measured reflection results will be added after the Colab T4 pipeline completes.
+
 ## 0.2.0 — 2026-10-07
 
 Bản sửa và cập nhật của K4-Track3-Day22. **Chưa chạy end-to-end trên GPU**: mã nguồn đã qua test CPU,
