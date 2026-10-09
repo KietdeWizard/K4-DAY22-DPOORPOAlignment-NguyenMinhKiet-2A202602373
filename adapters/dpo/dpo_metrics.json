@@ -4,10 +4,13 @@
   "reference": "models/sft-merged (precomputed)",
   "pref_dataset": "sailor2/sea-ultrafeedback-onpolicy",
   "beta": 0.1,
-  "lr": 0.000005,
+  "lr": 5e-06,
+  "loss_type": [
+    "sigmoid"
+  ],
   "epochs": 1.0,
-  "first_logged_loss": 0.6924432277679443,
   "final_train_loss": 0.679867820739746,
+  "first_logged_loss": 0.6924432277679443,
   "end_chosen_reward": 0.2179434915742604,
   "end_rejected_reward": 0.17548441268736498,
   "end_reward_gap": 0.04245907856384292,

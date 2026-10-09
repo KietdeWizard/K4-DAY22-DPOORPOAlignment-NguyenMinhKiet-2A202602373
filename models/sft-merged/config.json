@@ -1,0 +1,6 @@
+{
+  "_name_or_path": "unsloth/Qwen3-4B-Instruct-2507-unsloth-bnb-4bit",
+  "architectures": ["Qwen3ForCausalLM"],
+  "model_type": "qwen3",
+  "torch_dtype": "bfloat16"
+}

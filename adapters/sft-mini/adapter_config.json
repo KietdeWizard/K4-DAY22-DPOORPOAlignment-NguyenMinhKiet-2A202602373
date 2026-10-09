@@ -1,0 +1,7 @@
+{
+  "base_model_name_or_path": "unsloth/Qwen3-4B-Instruct-2507-unsloth-bnb-4bit",
+  "peft_type": "LORA",
+  "r": 16,
+  "lora_alpha": 32,
+  "task_type": "CAUSAL_LM"
+}
