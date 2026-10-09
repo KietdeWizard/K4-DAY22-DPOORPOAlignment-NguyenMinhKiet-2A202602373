@@ -166,7 +166,16 @@ if provider != "rm" and not J.has_judge_key(provider):
 sanity, per_judge = {}, {}
 if provider == "rm":
     for name in C.JUDGE_RM_MODELS:
-        score = J.make_rm_scorer(name)
+        try:
+            score = J.make_rm_scorer(name)
+        except RuntimeError as exc:
+            # A free T4 may not have enough contiguous VRAM for the second
+            # reward model after generation. Keep the judges already loaded
+            # and produce a valid, clearly labelled one-judge summary.
+            if "out of memory" not in str(exc).lower():
+                raise
+            print(f"Skipping {name}: insufficient GPU memory for this reward model.")
+            break
         sanity[name] = J.sanity_accuracy(score)
         print(f"{name}: Vietnamese sanity {sanity[name]:.0%} of {len(J.SANITY_PAIRS)} obvious pairs")
         per_judge[name] = [{**r, **J.rm_judge_pair(r["prompt"], r["sft"], r["dpo"], score)} for r in records]
